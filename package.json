@@ -4,7 +4,12 @@
   "description": "JAVASCRIPT development Environment for developers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "node buildScripts/startMsg.js",
+    "start": "npm-run-all --parallel security-check open:src",
+    "open:src": "node buildScripts/srcServer.js",
+    "security-check":"nsp check",
+    "hosturl":"lt --port 3001 --subdomain abhishek",
+    "share-view":"npm-run-all --parallel open:src hosturl"
   },
   "repository": {
     "type": "git",
