@@ -21,3 +21,6 @@ We choose ESLINT . --- WHY ?
 -Error cannot be ignored
 -Its come with Recommendation , and ya you can tweak it.
 -Display clean message
+
+For Continuous Integration
+- Appveyor added (i am using windows)
