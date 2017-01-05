@@ -1,6 +1,6 @@
-//import './index.css';
+import './index.css';
 
-import numbers from 'numeral';
+import number from 'numeral';
 
-const courseval = numbers(1000).format('$0,0.00');
+const courseval = number(1000).format('$0,0.00');
 console.log(`I got amoumt of ${courseval} for my course . Yipee!`);
