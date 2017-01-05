@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node buildScripts/startMsg.js",
-    "start": "npm-run-all --parallel security-check open:src",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch ",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "hosturl": "lt --port 3001 --subdomain abhishek",
-    "share-view": "npm-run-all --parallel open:src hosturl"
+    "share-view": "npm-run-all --parallel open:src hosturl",
+    "lint":"esw webpack.config.* src buildScripts --color",
+    "lint:watch":"npm run lint -- --watch",
+    "test":"mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch":"npm run test -- --watch"
   },
   "repository": {
     "type": "git",
