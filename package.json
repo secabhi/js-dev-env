@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node buildScripts/startMsg.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch ",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "hosturl": "lt --port 3001 --subdomain abhishek",
     "share-view": "npm-run-all --parallel open:src hosturl",
-    "lint":"esw webpack.config.* src buildScripts --color",
-    "lint:watch":"npm run lint -- --watch",
-    "test":"mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch":"npm run test -- --watch"
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch",
+    "mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mockapi":"npm run mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3002"
   },
   "repository": {
     "type": "git",
@@ -41,6 +44,8 @@
     "express": "4.14.0",
     "html-webpack-plugin": "2.22.0",
     "jsdom": "9.8.0",
+    "json-schema-faker": "^0.4.0",
+    "json-server": "^0.9.4",
     "localtunnel": "1.8.1",
     "mocha": "3.1.2",
     "nock": "8.1.0",
@@ -53,7 +58,8 @@
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4",
     "webpack-hot-middleware": "2.13.0",
-    "webpack-md5-hash": "0.0.5"
+    "webpack-md5-hash": "0.0.5",
+    "whatwg-fetch": "^2.0.1"
   },
   "homepage": "https://github.com/secabhi/js-dev-env#readme"
 }
