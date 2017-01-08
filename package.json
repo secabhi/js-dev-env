@@ -15,12 +15,12 @@
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",
     "mock-data": "babel-node buildScripts/generateMockData",
-    "prestart-mockapi":"npm run mock-data",
+    "prestart-mockapi": "npm run mock-data",
     "start-mockapi": "json-server --watch src/api/db.json --port 3002",
-    "clean-dist":"rimraf ./dist && mkdir dist",
-    "prebuild":"npm-run-all clean-dist test lint",
-    "build":"babel-node buildScripts/build.js",
-    "postbuild":"babel-node buildScripts/distServer.js"
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
     "eslint-plugin-import": "2.0.1",
     "eslint-watch": "2.1.14",
     "express": "4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "2.22.0",
     "jsdom": "9.8.0",
     "json-schema-faker": "^0.4.0",
