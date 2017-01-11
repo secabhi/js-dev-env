@@ -24,3 +24,21 @@ We choose ESLINT . --- WHY ?
 
 For Continuous Integration
 - Appveyor added (i am using windows)
+
+Commands for Listed Task :
+
+For Mockdata creation 
+-npm run prestart-mockapi
+For creating mockdata json file 
+-npm run start-mockapi
+For creating Build in Dist folder 
+-npm run build -s
+
+
+Main two command - 
+--- npm start;
+--- npm run build;
+
+Enjoy !
+
+
