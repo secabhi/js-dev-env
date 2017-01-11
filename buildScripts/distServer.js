@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 })
 
-app.get('/employee', function (req, res) {
+app.get('http://hollow-grandmother.surge.sh/employee', function (req, res) {
   res.json([
     { "id": 1, "name": "Abhi" },
     { "id": 2, "name": "Ravi" },
